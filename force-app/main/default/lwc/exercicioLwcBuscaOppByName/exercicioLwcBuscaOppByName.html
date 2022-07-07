@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title={titulo}>
+        <div class="slds-p-around_large">
+            <lightning-input type="text" label="Informe o o nome da opp" value={nomeOpp} onchange={buscaOpps}>
+            </lightning-input>
+        </div>
+        
+
+        <div if:true={listaOpps} class="slds-m-top_large">
+            <lightning-datatable 
+                    key-field="id" 
+                    data={listaOpps} 
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+        <p slot="footer">
+            {footer}
+        </p>
+    </lightning-card>
+</template>

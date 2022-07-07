@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="OportunidadesController">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="oportunidades" type="Opportunity[]" />
+    
+    <p>OLá eu sou o CMP</p>
+
+    <br/>
+
+    <lightning:button variant="brand" label="Busca Opps" title="Busca oportunidades" onclick="{! c.handleClick }"/>
+    <br/>
+    <br/>
+
+    <aura:if isTrue="{!v.oportunidades.length}">
+        <ul>
+           <aura:iteration items="{!v.oportunidades}" var="opp">
+              <li>{!opp.Name} - {!opp.Amount}</li>
+           </aura:iteration>
+        </ul>
+       <aura:set attribute="else">
+           <p>Não existem Opps</p>
+       </aura:set>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,29 @@
+<aura:component controller="ControllerAuraCmp">
+    <aura:import library="lightning:alert" property="LightningAlert" />
+    
+    <aura:attribute name="idConta" type="String" />
+
+    <aura:attribute name="newContact" type="Contact"
+        default="{ 'sobjectType': 'Contact',
+                   'FirstName': '',
+                   'LastName': '',
+                   'Email': '',}" />
+
+
+    <lightning:card iconName="standard:contact" title="Add a Contact">
+        <div class="slds-p-around_medium">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:inputName aura:id="contact"
+                                         label="Contact Name"
+                                         firstName="{!v.newContact.FirstName}"
+                                         lastName="{!v.newContact.LastName}"
+                                         salutation="{!v.newContact.Title}"
+                                         required="true"/>
+                    <lightning:input aura:id="contact" label="Email" type="email" value="{!v.newContact.Email}"/>
+                    <lightning:button label="Create Contact" onclick="{!c.handleCreateContact}" variant="brand" class="slds-m-top_medium"/>
+                </lightning:layoutItem> 
+            </lightning:layout>
+        </div>
+    </lightning:card>
+</aura:component>	

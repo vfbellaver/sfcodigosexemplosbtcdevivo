@@ -1,0 +1,29 @@
+<apex:page standardController="Account">
+
+<h1>Congratulations</h1>
+
+
+    <apex:outputText value="Texto output"/>
+    <apex:form>
+        <apex:pageBlock title="Dados da conta">    
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Account.Name}" />
+            </apex:pageBlockSection>    
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Account.AnnualRevenue}" />
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Account.AccountSource}" />
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Account.NumberOfEmployees}" />
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection>
+                <apex:inputField value="{!Account.AccountNumber}" />
+            </apex:pageBlockSection>  
+            <apex:pageBlockSection>
+                <apex:commandButton action="{!save}" value="Salvar"></apex:commandButton>
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

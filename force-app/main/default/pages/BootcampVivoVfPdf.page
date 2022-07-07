@@ -1,0 +1,14 @@
+<apex:page standardController="Account" renderAs="PDF">
+<h1>Dados da conta</h1>
+<apex:pageBlock>
+    <apex:pageBlockSection>
+        <apex:outputField value="{!Account.Name}"></apex:outputField>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection>
+         <apex:pageBlockTable value="{!Account.contacts}" var="contact">
+            <apex:column value="{!contact.Name}" />
+            <apex:column value="{!contact.Phone}" />
+        </apex:pageBlockTable>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

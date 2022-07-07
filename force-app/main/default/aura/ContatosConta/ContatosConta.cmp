@@ -1,0 +1,26 @@
+<aura:component controller="ControllerAuraCmp" implements="force:hasRecordId, flexipage:availableForAllPageTypes">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="contatos" type="Contact[]" />
+    <aura:attribute name="existeContato" type="Boolean" default="false" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <h1>Bem vindo</h1>
+    <br/><br/>
+    <c:createContactConta idConta="{!v.recordId}"></c:createContactConta>
+    <br/><br/>
+    <p>Olá seja bem vindo a lista de contatos</p>
+
+    <aura:if isTrue="{!v.existeContato}">
+        <ul>
+            <aura:iteration items="{!v.contatos}" var="contato">
+                <li>{!contato.Name}</li>
+            </aura:iteration>
+        </ul>
+        
+        <aura:set attribute="else">
+            <p>Não existe contatos</p>
+        </aura:set>
+    </aura:if>
+    
+  
+</aura:component>	

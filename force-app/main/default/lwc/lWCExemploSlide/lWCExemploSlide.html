@@ -1,0 +1,12 @@
+<template>
+    <lightning-card  title={titulocard}>
+        <p class="slds-p-horizontal_small">
+          {conteudoCard}
+          <br/>
+          <lightning-button label="Executa query" onclick={executaQuery}></lightning-button> <br/> 
+        </p>
+        <p slot="footer">
+            {footerCard}
+        </p>
+    </lightning-card>
+</template>

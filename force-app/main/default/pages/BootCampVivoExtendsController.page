@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="ExtendsController">
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations</h1>
+
+<apex:pageBlock>
+    <apex:pageBlockSection>
+        <apex:outputText value="{!saudacao}" />
+    </apex:pageBlockSection>
+    <apex:pageBlockSection>
+        <apex:outputText value="{!diahoje}" />
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

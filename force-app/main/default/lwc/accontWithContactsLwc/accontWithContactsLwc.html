@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title={titulo}>
+        <lightning-button label="New" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="text" label="Informe o ID da conta" value={idConta} onchange={defineIdConta}>
+            </lightning-input>
+            <br/>
+            <lightning-button variant="brand" label="Buscar" title="Buscar" icon-name="utility:search" disabled={botaoDesabilitado}
+                class="slds-m-left_x-small" onclick={buscaConta}></lightning-button>
+        </p>
+
+        <div if:true={registroConta} class="slds-m-top_large">
+            <lightning-datatable 
+                    key-field="id" 
+                    data={registroConta.Contacts} 
+                    columns={columns}>
+            </lightning-datatable>
+        </div>
+        <p slot="footer">
+            {footer}
+        </p>
+    </lightning-card>
+</template>
